@@ -1,16 +1,14 @@
 package service;
+import domain.Order;
+public class Pay {
+    private Order order; // Order 객체 포함
 
-import service.Order;
-
-import java.util.ArrayList;
-
-public class  Pay extends Order {
-    Pay(String name, ArrayList<String> ingredients, int spicinessLevel) {
-        super(name, ingredients, spicinessLevel);  // 부모 클래스 생성자 호출
+    public Pay(Order order) {
+        this.order = order;
     }
 
-    void calculateTotalWithDiscount(String couponCode) {
-        int total = calculateBaseTotal(); // 부모 클래스의 금액 계산 로직 호출
+    public void calculateTotalWithDiscount(String couponCode) {
+        int total = order.calculateBaseTotal(); // Order 객체의 금액 계산 로직 호출
 
         // 할인 코드 확인
         if ("1111".equals(couponCode)) {
