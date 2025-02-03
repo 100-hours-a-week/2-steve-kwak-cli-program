@@ -1,13 +1,13 @@
 package domain;
 
 public class FoodItem {
-    String name;
+    public String name;
 
     FoodItem(String name) {
         this.name = name;
     }
 
-    void display() {
+    public void display() {
         System.out.println("선택한 메뉴: " + name);
     }
 }
