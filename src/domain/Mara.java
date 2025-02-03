@@ -1,3 +1,7 @@
+package domain;
+
+import domain.FoodItem;
+
 import java.util.ArrayList;
 
 public class Mara extends FoodItem {
