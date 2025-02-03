@@ -1,14 +1,11 @@
 package domain;
-
-import domain.Mara;
-
 import java.util.ArrayList;
 
 public class Order extends Mara {
     int basePrice;
     int ingredientPrice = 1000; // 재료당 추가 가격
 
-    Order(String name, ArrayList<String> ingredients, int spicinessLevel) {
+    public Order(String name, ArrayList<String> ingredients, int spicinessLevel) {
         super(name, spicinessLevel);  // 메뉴 이름과 맵기 설정
         addIngredients(ingredients);
 
@@ -22,7 +19,7 @@ public class Order extends Mara {
     }
 
     // 금액 계산 로직
-    int calculateBaseTotal() {
+    public int calculateBaseTotal() {
         int total = basePrice;
         for (String ingredient : ingredients) {
             if (ingredient.isEmpty()) {
@@ -37,7 +34,7 @@ public class Order extends Mara {
         return total;
     }
 
-    void calculateTotal() {
+    public void calculateTotal() {
         int total = calculateBaseTotal();
         System.out.println("총 가격: " + total + "원");
     }
